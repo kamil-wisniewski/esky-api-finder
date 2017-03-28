@@ -1,0 +1,32 @@
+<p>
+  Retrieve the cheapest quotes from our cache prices.
+</p>
+
+
+<form [formGroup]="search1Form" (ngSubmit)="confirmSearch1()">
+
+  <p> Input Origin place </p>
+  <input type="text" #originBox formControlName="originBox" (keyup)="getOrigin(originBox.value)" [(ngModel)]="selectedOrigin" placeholder="Origin" autocomplete="off"
+  />
+
+  <div *ngFor="let origin of originPlace" (click)="setOrigin(origin)">
+    {{origin.PlaceName}}
+  </div>
+
+
+  <p> Input Destination place </p>
+  <input type="text" #destinationBox formControlName="destinationBox" (keyup)="getDestination(destinationBox.value)" [(ngModel)]="selectedDestination" placeholder="Destination"
+    autocomplete="off" />
+
+  <div *ngFor="let destination of destinationPlace" (click)="setDestination(destination)">
+    {{destination.PlaceName}}
+  </div>
+
+  <p>Form value: {{ search1Form.value | json }}</p>
+  <p>Form status: {{ search1Form.status | json }}</p>
+
+  <div>
+    <button type="submit" [disabled]="!search1Form.valid">Search </button>
+  </div>
+
+</form>

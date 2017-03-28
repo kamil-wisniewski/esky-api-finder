@@ -1,20 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
+import { HttpModule,JsonpModule } from '@angular/http';
+import {SearchService} from './search.service';
+import {SearchCacheService} from './services/search-cache.service';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { SearchComponent } from './search/search.component';
+import { CachePricesComponent } from './cache-prices/cache-prices.component';
+import { LivePricesComponent } from './live-prices/live-prices.component';
+import {Server} from './server';
+import {HelpersService} from './services/helpers.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchComponent,
+    CachePricesComponent,
+    LivePricesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    JsonpModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [SearchService,SearchCacheService,Server,HelpersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
