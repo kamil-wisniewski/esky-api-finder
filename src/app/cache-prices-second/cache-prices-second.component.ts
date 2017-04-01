@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SearchCacheService } from './../services/search-cache.service';
 import { HelpersService } from './../services/helpers.service';
 import 'rxjs/add/operator/distinctUntilChanged';
@@ -7,11 +7,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Place } from './../domain/place';
 
 @Component({
-  selector: 'app-cache-prices',
-  templateUrl: './cache-prices.component.html',
-  styleUrls: ['./cache-prices.component.css']
+  selector: 'app-cache-prices-second',
+  templateUrl: './cache-prices-second.component.html',
+  styleUrls: ['./cache-prices-second.component.css']
 })
-export class CachePricesComponent implements OnInit {
+export class CachePricesSecondComponent implements OnInit {
+  
   showOrigin: boolean;
   showDestination: boolean;
   quotes: any;

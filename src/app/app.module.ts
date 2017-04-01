@@ -11,13 +11,16 @@ import { CachePricesComponent } from './cache-prices/cache-prices.component';
 import { LivePricesComponent } from './live-prices/live-prices.component';
 import {Server} from './server';
 import {HelpersService} from './services/helpers.service';
+import { CachePricesSecondComponent } from './cache-prices-second/cache-prices-second.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     CachePricesComponent,
-    LivePricesComponent
+    LivePricesComponent,
+    CachePricesSecondComponent
   ],
   imports: [
     BrowserModule,
